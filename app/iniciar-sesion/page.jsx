@@ -1,17 +1,34 @@
 'use client'
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { signIn } from 'next-auth/react'
 
 export default function LoginPage() {
-
+  const router = useRouter()
+  const [error, setError] = useState('')
   const { register, handleSubmit, formState: { errors } } = useForm()
 
-  const onSubmit = handleSubmit(data => {
-    console.log(data);
+  const onSubmit = handleSubmit(async data => {
+    const res = await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      redirect: false
+    })
+
+    if (res.error) {
+      setError(res.error)
+    } else {
+      router.push('/admin')
+      router.refresh()
+    }
   })
 
   return <main onSubmit={onSubmit} className="login">
     <h2 className="login__heading">Iniciar Sesión</h2>
     <p className="login__description">Inicia sesión para administrar tus clientes</p>
+
+    {error && <span>{error}</span>}
 
     <form className="form">
       <div className="form__field">
