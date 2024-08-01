@@ -39,9 +39,9 @@ const authOptions = {
 
   // secret: process.env.NEXTAUTH_SECRET,
 
-  // pages: {
-  //   signIn: '/iniciar-sesion',
-  // },
+  pages: {
+    signIn: '/iniciar-sesion',
+  },
 };
 
 const handler = NextAuth(authOptions);
