@@ -49,7 +49,7 @@
 @mixin container {
   /* max-width: 120rem;
   width: 95%; */
-  width: min(95%, 140rem);
+  width: min(95%, 120rem);
   margin: 0 auto;
 }
 
