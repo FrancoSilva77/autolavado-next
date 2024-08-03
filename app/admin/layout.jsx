@@ -9,7 +9,7 @@ export default function AdminLayout({ children }) {
         <Aside />
 
         <main className="dashboard__content">
-          <h2>Clientes</h2>
+          {children}
         </main>
       </div>
     </div>

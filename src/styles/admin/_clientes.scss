@@ -1,0 +1,8 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+.clientes {
+  &__add {
+    @include m.button(v.$c-primary, v.$c-white);
+    width: auto;
+  }
+}
