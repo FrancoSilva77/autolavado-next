@@ -4,7 +4,7 @@ export default function AdminPage() {
   return <div className="clientes">
     <h2 className="clientes__heading">Administrar Clientes</h2>
 
-    <Link href='/admin/clientes/nuevo' className="clientes__add">Crear Cliente</Link>
+    <Link href='/admin/clientes/nuevo' className="clients__action">Crear Cliente</Link>
 
     <table className="table">
       <thead className="table__thead">
